@@ -1,0 +1,81 @@
+# ════════════════════════════════════════════════════════════
+#  QuantFlow .gitignore
+# ════════════════════════════════════════════════════════════
+
+
+# ── Secrets & credentials ────────────────────────────────────
+.env
+.env.local
+.env.*.local
+**/.env
+
+
+# ── Runtime data files ───────────────────────────────────────
+# These are created at runtime and may contain sensitive
+# trading data — keep them out of version control.
+trades.csv
+decisions_log.csv
+pending_trades.json
+open_positions.csv
+
+
+# ── Generated reports ────────────────────────────────────────
+setup_scanner_report_*.html
+chart_report.html
+*_report_*.html
+
+
+# ── Logs ─────────────────────────────────────────────────────
+*.log
+logs/
+
+
+# ── Python ───────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+
+# ── Virtual environments ──────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+
+# ── IDEs & editors ───────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+
+# ── macOS / Windows ──────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

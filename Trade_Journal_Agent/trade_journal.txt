@@ -1,0 +1,157 @@
+================================================================================
+  TRADE JOURNAL — GERMAN MARKET EDITION
+  Period: 2026-04-01 to 2026-04-16
+================================================================================
+
+  TRADE LOG
+  --------------------------------------------------------------------------------
+  #   Date         Ticker    Dir    Entry     Exit      Qty    P&L (EUR)   R
+  --------------------------------------------------------------------------------
+  1   2026-04-01   SAP.DE    BUY    178.50    185.20     50    +335.00    2.1
+  2   2026-04-02   BMW.DE    BUY     95.30     92.10    100    -320.00   -1.0
+  3   2026-04-03   VOW3.DE   SHORT  112.40    108.90     75    +262.50    1.8
+  4   2026-04-04   DTE.DE    BUY     22.80     23.90    200    +220.00    1.4
+  5   2026-04-07   ALV.DE    BUY    265.00    271.50     30    +195.00    1.3
+  6   2026-04-08   BAYN.DE   BUY     28.40     26.10    150    -345.00   -1.0
+  7   2026-04-09   SIE.DE    BUY    182.00    189.40     40    +296.00    2.0
+  8   2026-04-10   ADS.DE    SHORT  218.50    221.80     60    -198.00   -1.0
+  9   2026-04-11   MBG.DE    BUY     58.20     61.80    120    +432.00    2.4
+  10  2026-04-14   DBK.DE    BUY     16.40     15.90    300    -150.00   -1.0
+  11  2026-04-15   SAP.DE    BUY    187.30    193.60     50    +315.00    2.0
+  12  2026-04-16   BAS.DE    SHORT   44.80     43.10    200    +340.00    2.2
+  --------------------------------------------------------------------------------
+
+  TRADE DETAILS
+  --------------------------------------------------------------------------------
+
+  [1] 2026-04-01 | SAP.DE | BUY | Grade: A
+  Setup     : Breakout
+  Tag       : Clean breakout entry
+  P&L       : +EUR 335.00  (2.1R)
+  Notes     : SAP broke above 178 resistance with strong volume after earnings beat
+  Lesson    : Wait for volume confirmation before entering breakouts
+
+  [2] 2026-04-02 | BMW.DE | BUY | Grade: C
+  Setup     : Pullback
+  Tag       : Premature pullback entry
+  P&L       : -EUR 320.00  (-1.0R)
+  Notes     : Thought it was a pullback buy but trend was still down
+  Lesson    : Do not buy pullbacks in downtrending stocks — check higher timeframe first
+
+  [3] 2026-04-03 | VOW3.DE | SHORT | Grade: B
+  Setup     : Momentum
+  Tag       : Strong momentum short
+  P&L       : +EUR 262.50  (1.8R)
+  Notes     : VW weak after sector news — shorted the breakdown
+  Lesson    : Good read on sector weakness — hold shorts longer when momentum is strong
+
+  [4] 2026-04-04 | DTE.DE | BUY | Grade: B
+  Setup     : Trend-Follow
+  Tag       : Steady trend follow
+  P&L       : +EUR 220.00  (1.4R)
+  Notes     : Deutsche Telekom in clean uptrend — bought dip to 21EMA
+  Lesson    : Trend following works — do not exit early just because price stalls briefly
+
+  [5] 2026-04-07 | ALV.DE | BUY | Grade: A
+  Setup     : Pullback
+  Tag       : Textbook pullback trade
+  P&L       : +EUR 195.00  (1.3R)
+  Notes     : Allianz pulled back to key support and bounced exactly as expected
+  Lesson    : Allianz pullback to support was a high quality setup — size up on A-grade setups
+
+  [6] 2026-04-08 | BAYN.DE | BUY | Grade: D
+  Setup     : News-Play
+  Tag       : Overreacted to news
+  P&L       : -EUR 345.00  (-1.0R)
+  Notes     : Bought after Bayer news spike — chased too late and stopped out
+  Lesson    : Never chase a stock that has already moved 5 percent on news — wait for consolidation
+
+  [7] 2026-04-09 | SIE.DE | BUY | Grade: A
+  Setup     : Breakout
+  Tag       : Multi-week breakout play
+  P&L       : +EUR 296.00  (2.0R)
+  Notes     : Siemens broke out of 3 week consolidation — held for full move
+  Lesson    : Siemens breakout was well telegraphed — trust your analysis and hold longer
+
+  [8] 2026-04-10 | ADS.DE | SHORT | Grade: C
+  Setup     : Reversal
+  Tag       : Failed reversal short
+  P&L       : -EUR 198.00  (-1.0R)
+  Notes     : Tried to short Adidas reversal too early — bounced hard against me
+  Lesson    : Reversal shorts need more confirmation — one red candle is not enough signal
+
+  [9] 2026-04-11 | MBG.DE | BUY | Grade: A
+  Setup     : Momentum
+  Tag       : High momentum long
+  P&L       : +EUR 432.00  (2.4R)
+  Notes     : Mercedes strong after positive auto sector data — rode the full move
+  Lesson    : Best trade of the week — momentum setups with sector tailwind are powerful
+
+  [10] 2026-04-14 | DBK.DE | BUY | Grade: C
+  Setup     : Mean-Reversion
+  Tag       : Mean reversion too early
+  P&L       : -EUR 150.00  (-1.0R)
+  Notes     : Tried to buy Deutsche Bank dip but banking sector still weak
+  Lesson    : Deutsche Bank mean reversion failed — always check macro environment before fading moves
+
+  [11] 2026-04-15 | SAP.DE | BUY | Grade: B
+  Setup     : Trend-Follow
+  Tag       : Second SAP trend trade
+  P&L       : +EUR 315.00  (2.0R)
+  Notes     : SAP continuing higher — bought second pullback in the uptrend
+  Lesson    : SAP is your best performing ticker — focus on stocks that work for your style
+
+  [12] 2026-04-16 | BAS.DE | SHORT | Grade: A
+  Setup     : Breakdown
+  Tag       : Clean sector breakdown
+  P&L       : +EUR 340.00  (2.2R)
+  Notes     : BASF broke key support as chemical sector sold off — clean short setup
+  Lesson    : BASF breakdown on weak chemicals data — sector analysis adds huge edge
+
+  --------------------------------------------------------------------------------
+
+  PERFORMANCE SUMMARY
+  --------------------------------------------------------------------------------
+  Total trades    : 12
+  Wins / Losses   : 8W / 4L
+  Win rate        : 66.7%
+  Total P&L       : +EUR 1,382.50
+  Avg win         : +EUR 274.44
+  Avg loss        : -EUR 253.25
+  Best trade      : +EUR 432.00  (MBG.DE — 2026-04-11)
+  Worst trade     : -EUR 345.00  (BAYN.DE — 2026-04-08)
+
+  P&L BY SETUP TYPE
+  --------------------------------------------------------------------------------
+  Momentum          +EUR 694   (2 trades)   ####################
+  Breakout          +EUR 631   (2 trades)   #####################
+  Trend-Follow      +EUR 535   (2 trades)   ###################
+  Breakdown         +EUR 340   (1 trade)    ############
+  Pullback          -EUR 125   (2 trades)   ####
+  Mean-Reversion    -EUR 150   (1 trade)    #####
+  Reversal          -EUR 198   (1 trade)    #######
+  News-Play         -EUR 345   (1 trade)    ############
+
+  TRADE QUALITY BREAKDOWN
+  --------------------------------------------------------------------------------
+  Grade A   5 trades   #####
+  Grade B   4 trades   ####
+  Grade C   3 trades   ###
+  Grade D   1 trade    #
+
+  KEY LESSONS
+  --------------------------------------------------------------------------------
+   1. Wait for volume confirmation before entering breakouts               (SAP.DE)
+   2. Do not buy pullbacks in downtrending stocks — check higher TF first  (BMW.DE)
+   3. Hold shorts longer when momentum is strong                         (VOW3.DE)
+   4. Do not exit early just because price stalls briefly                  (DTE.DE)
+   5. Size up on A-grade setups                                            (ALV.DE)
+   6. Never chase a stock that has already moved 5% on news               (BAYN.DE)
+   7. Trust your analysis and hold longer on well-telegraphed breakouts    (SIE.DE)
+   8. Reversal shorts need more confirmation — one red candle is not enough(ADS.DE)
+   9. Momentum setups with sector tailwind are powerful                    (MBG.DE)
+  10. Always check macro environment before fading moves                   (DBK.DE)
+  11. Focus on stocks that work for your style                             (SAP.DE)
+  12. Sector analysis adds huge edge on breakdown trades                   (BAS.DE)
+
+================================================================================

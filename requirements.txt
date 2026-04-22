@@ -1,0 +1,21 @@
+# QuantFlow — Combined Dependencies
+# Install with: pip install -r requirements.txt
+
+# ── Anthropic Claude AI ───────────────────────────────────────
+anthropic>=0.55.0
+
+# ── Market Data ───────────────────────────────────────────────
+yfinance>=0.2.55
+
+# ── Data Processing ───────────────────────────────────────────
+pandas>=2.0.0
+
+# ── Charts ────────────────────────────────────────────────────
+matplotlib>=3.7.0
+mplfinance>=0.12.10
+
+# ── Scheduling ────────────────────────────────────────────────
+schedule>=1.2.0
+
+# ── Configuration ─────────────────────────────────────────────
+python-dotenv>=1.0.0
