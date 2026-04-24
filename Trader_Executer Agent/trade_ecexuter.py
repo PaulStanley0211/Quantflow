@@ -1,17 +1,17 @@
 """
-trade_executor.py — Human-in-the-Loop Trade Executor
+trade_ecexuter.py — Human-in-the-Loop Trade Executor
 ======================================================
 Every weekday at 08:30 CET:
 1. Scans DAX stocks for high-conviction setups
 2. Sends you an approval email for each setup found
 3. You reply YES or NO to the email
-4. Agent checks your replies every 10 minutes
+4. Agent checks your replies every CHECK_REPLIES_INTERVAL seconds
 5. Approved trades are logged to journal CSV automatically
 6. Rejected trades are logged to decisions_log.csv with reason
 
 Usage:
-    python trade_executor.py          # run once immediately
-    python trade_executor.py --schedule  # auto-run at 08:30 every weekday
+    python trade_ecexuter.py          # run once immediately
+    python trade_ecexuter.py --schedule  # auto-run at 08:30 every weekday
 """
 
 import os
@@ -253,7 +253,6 @@ def send_approval_email(setups: list):
 
     # Build setup cards
     cards = ""
-    reply_guide = ""
     for s in setups:
         color       = SETUP_COLORS.get(s["setup"], "#888")
         dir_color   = "#00c853" if s["direction"] == "BUY" else "#ff3d00"
@@ -287,10 +286,10 @@ def send_approval_email(setups: list):
           </div>
 
           <div style="display:flex;gap:16px;font-size:12px;color:#666;margin-bottom:10px;flex-wrap:wrap">
-            <span>📊 RSI: {s['rsi']}</span>
-            <span>🔥 Volume: {s['vol_surge']}x avg</span>
+            <span>RSI: {s['rsi']}</span>
+            <span>Volume: {s['vol_surge']}x avg</span>
             <span style="color:{rr_color};font-weight:600">R/R: {s['rr']}:1</span>
-            <span>🏭 Sector: {s['sector']}</span>
+            <span>Sector: {s['sector']}</span>
           </div>
 
           <div style="background:#fff;border-left:3px solid {color};padding:10px 12px;border-radius:0 6px 6px 0;font-size:13px;color:#374151;line-height:1.6;margin-bottom:12px">
@@ -303,7 +302,6 @@ def send_approval_email(setups: list):
           </div>
         </div>"""
 
-        reply_guide += f"YES {ticker_disp} or NO {ticker_disp}\n"
 
     html = f"""<!DOCTYPE html>
 <html>
@@ -311,7 +309,7 @@ def send_approval_email(setups: list):
 <body style="font-family:Arial,sans-serif;max-width:650px;margin:auto;background:#f9fafb;padding:24px">
 
   <div style="background:#1e293b;color:white;padding:20px 24px;border-radius:10px 10px 0 0">
-    <h2 style="margin:0;font-size:20px">🔔 Trade Approval Request</h2>
+    <h2 style="margin:0;font-size:20px">Trade Approval Request</h2>
     <p style="margin:4px 0 0;color:#94a3b8;font-size:13px">{today} · {now} · {len(setups)} setup(s) found · XETRA opens at 09:00 CET</p>
   </div>
 
@@ -327,9 +325,9 @@ def send_approval_email(setups: list):
 
     <div style="background:#fef3c7;border:1px solid #fbbf24;border-radius:8px;padding:14px;margin-top:8px">
       <p style="margin:0;font-size:13px;color:#92400e;line-height:1.6">
-        <b>⚠️ Important:</b> These are suggestions, not financial advice.
+        <b>Important:</b> These are suggestions, not financial advice.
         Always verify the setup on your own chart before approving.
-        The agent will check your replies every 10 minutes.
+        The agent will check your replies every {CHECK_REPLIES_INTERVAL} seconds.
       </p>
     </div>
 
@@ -600,7 +598,7 @@ def run_scan_and_notify():
     print("\n  Sending approval email...")
     send_approval_email(setups)
 
-    print(f"\n  Done. Checking for replies every {CHECK_REPLIES_INTERVAL//60} minutes.")
+    print(f"\n  Done. Checking for replies every {CHECK_REPLIES_INTERVAL} seconds.")
     print(f"  Reply YES TICKER or NO TICKER to your email.\n")
 
 
@@ -622,18 +620,16 @@ def main():
     # Run once immediately (no schedule)
     if not args.schedule:
         run_scan_and_notify()
-        # Keep checking replies every 10 minutes
         print("  Monitoring for replies... (Ctrl+C to stop)\n")
         while True:
             time.sleep(CHECK_REPLIES_INTERVAL)
             process_replies()
-        return
 
     # Scheduled mode
     print("\n" + "="*55)
     print("  Trade Executor — Scheduled Mode")
     print("  Scan runs every weekday at 08:30 CET")
-    print("  Replies checked every 10 minutes")
+    print(f"  Replies checked every {CHECK_REPLIES_INTERVAL} seconds")
     print("  Keep this terminal open in background")
     print("="*55 + "\n")
 
@@ -647,7 +643,7 @@ def main():
     schedule.every().thursday.at("08:30").do(run_scan_and_notify)
     schedule.every().friday.at("08:30").do(run_scan_and_notify)
 
-    schedule.every(CHECK_REPLIES_INTERVAL // 60).minutes.do(process_replies)
+    schedule.every(CHECK_REPLIES_INTERVAL).seconds.do(process_replies)
 
     print("  Scheduler running — Ctrl+C to stop\n")
 

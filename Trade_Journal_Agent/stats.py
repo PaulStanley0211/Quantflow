@@ -66,7 +66,7 @@ def print_stats(trades: list):
     print("  " + "-" * 36)
     recent = [t for t in trades[-5:] if t.get("ai_lesson")]
     for t in recent:
-        print(f"  [{t.get('entry_date', '')}] {t['ticker']}: {t['ai_lesson']}")
+        print(f"  [{t.get('date', '')}] {t['ticker']}: {t['ai_lesson']}")
 
     print("=" * 50 + "\n")
 

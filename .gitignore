@@ -17,17 +17,35 @@ trades.csv
 decisions_log.csv
 pending_trades.json
 open_positions.csv
+daily_state.json
+trade_journal.txt
 
 
 # ── Generated reports ────────────────────────────────────────
 setup_scanner_report_*.html
 chart_report.html
+strategy_report.html
 *_report_*.html
+
+
+# ── Diagnostic / scratch output ──────────────────────────────
+scan_output.txt
+scan_error.txt
 
 
 # ── Logs ─────────────────────────────────────────────────────
 *.log
 logs/
+
+
+# ── Node / frontend ──────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+# Vite default dist dir (our build outputs to ../static instead, kept in repo)
+**/frontend/dist/
 
 
 # ── Python ───────────────────────────────────────────────────

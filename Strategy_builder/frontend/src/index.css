@@ -1,0 +1,157 @@
+/* =========================================================
+   QUANTFLOW — Editorial Financial Terminal
+   A trading dashboard dressed as a financial broadsheet:
+   warm off-black paper, cream ink, amber as ink accent,
+   Fraunces serif display, Instrument Sans for voice,
+   JetBrains Mono for data.
+   ========================================================= */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* — Palette — Phosphor Terminal — */
+  --paper:            #0b0906;          /* warm near-black */
+  --paper-2:          #14110c;          /* surface 1 */
+  --paper-3:          #1c1813;          /* surface 2 */
+  --paper-4:          #26211a;          /* surface elevated */
+  --rule:             #2e2820;          /* hairline rules */
+  --rule-bright:      #44392a;          /* emphasized rules */
+
+  --ink:              #f4eddc;          /* cream body ink */
+  --ink-dim:          #a89f87;          /* faded ink */
+  --ink-muted:        #6e664f;          /* caption ink */
+  --ink-faint:        #433c2c;          /* barely there */
+
+  /* Signature amber — the defining accent */
+  --amber:            #f5a623;
+  --amber-hot:        #ffb347;
+  --amber-soft:       rgba(245,166,35,.14);
+  --amber-glow:       rgba(245,166,35,.35);
+
+  /* Data signal colors — muted, editorial, not garish */
+  --signal-up:        #3ddc84;          /* fresh mint — profit */
+  --signal-up-soft:   rgba(61,220,132,.12);
+  --signal-down:      #ff5757;          /* clean vermilion — loss */
+  --signal-down-soft: rgba(255,87,87,.12);
+  --signal-warn:      #f5a623;          /* matches amber */
+  --signal-cool:      #4cc9f0;          /* sparingly */
+
+  /* Typography */
+  --serif:   "Fraunces", "Playfair Display", Georgia, serif;
+  --sans:    "Instrument Sans", "Söhne", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --mono:    "JetBrains Mono", "IBM Plex Mono", ui-monospace, Menlo, monospace;
+
+  /* Layout */
+  --sidebar-w: 420px;
+  --header-h:  68px;
+  --radius-lg: 14px;
+  --radius-md: 10px;
+  --radius-sm: 6px;
+}
+
+html, body, #root {
+  height: 100%;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 14px;
+  font-feature-settings: "ss01", "cv01", "cv02";
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Subtle paper-grain overlay — ambient texture, not decoration */
+body::before {
+  content: "";
+  position: fixed; inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    radial-gradient(ellipse at 15% 10%, rgba(245,166,35,0.045) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 90%, rgba(245,166,35,0.03)  0%, transparent 50%),
+    url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.04 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-size: cover, cover, 160px 160px;
+  mix-blend-mode: screen;
+  opacity: .85;
+}
+
+/* Scrollbars — thin, almost invisible */
+::-webkit-scrollbar              { width: 6px; height: 6px; }
+::-webkit-scrollbar-track        { background: transparent; }
+::-webkit-scrollbar-thumb        { background: var(--rule); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover  { background: var(--rule-bright); }
+
+/* Typography helpers */
+.serif { font-family: var(--serif); }
+.mono  { font-family: var(--mono); }
+.sans  { font-family: var(--sans); }
+
+.display {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 144, "SOFT" 0;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  color: var(--ink);
+}
+
+.label {
+  font-family: var(--sans);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+
+.numeric {
+  font-family: var(--mono);
+  font-feature-settings: "tnum", "zero";
+  font-variant-numeric: tabular-nums;
+}
+
+/* Animations — one well-orchestrated reveal */
+@keyframes paper-rise {
+  from { opacity: 0; transform: translateY(14px); filter: blur(4px); }
+  to   { opacity: 1; transform: none;              filter: none; }
+}
+
+@keyframes ink-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes bar-grow-x {
+  from { transform: scaleX(0); transform-origin: left; }
+  to   { transform: none; }
+}
+
+@keyframes amber-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 var(--amber-glow);       opacity: 1;   }
+  50%      { box-shadow: 0 0 0 8px rgba(245,166,35,0);    opacity: 0.6; }
+}
+
+@keyframes typing-bounce {
+  0%, 60%, 100% { transform: translateY(0); }
+  30%           { transform: translateY(-5px); }
+}
+
+.rise-1 { animation: paper-rise .55s .00s both ease-out; }
+.rise-2 { animation: paper-rise .55s .05s both ease-out; }
+.rise-3 { animation: paper-rise .55s .10s both ease-out; }
+.rise-4 { animation: paper-rise .55s .15s both ease-out; }
+.rise-5 { animation: paper-rise .55s .20s both ease-out; }
+.rise-6 { animation: paper-rise .55s .25s both ease-out; }
+
+/* Selection */
+::selection { background: var(--amber); color: var(--paper); }
+
+/* Utility: horizontal rule that carries editorial weight */
+.rule {
+  height: 1px; background: var(--rule); border: 0; margin: 0;
+}
+.rule-strong {
+  height: 1px; background: var(--rule-bright); border: 0;
+}

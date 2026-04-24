@@ -1,21 +1,28 @@
-# QuantFlow — Combined Dependencies
+# QuantFlow — Combined Python Dependencies
 # Install with: pip install -r requirements.txt
 
 # ── Anthropic Claude AI ───────────────────────────────────────
-anthropic>=0.55.0
+anthropic
 
 # ── Market Data ───────────────────────────────────────────────
-yfinance>=0.2.55
+yfinance
 
 # ── Data Processing ───────────────────────────────────────────
-pandas>=2.0.0
+pandas
+numpy
 
 # ── Charts ────────────────────────────────────────────────────
-matplotlib>=3.7.0
-mplfinance>=0.12.10
+matplotlib
+mplfinance
 
 # ── Scheduling ────────────────────────────────────────────────
-schedule>=1.2.0
+schedule
 
 # ── Configuration ─────────────────────────────────────────────
-python-dotenv>=1.0.0
+python-dotenv
+
+# ── Strategy Builder web app ──────────────────────────────────
+# Used by Strategy_builder/app.py for the live backtest dashboard
+fastapi
+uvicorn[standard]
+pydantic
